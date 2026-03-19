@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. Use o prefixo --color-* para gerar classes de cores */
+  --color-text: #EBEBEB;
+  /* Gera: text-text */
+  --color-text-secondary: #6B6B6B;
+  /* Gera: text-text-secondary */
+  --color-primary: #462878;
+  /* Gera: text-primary, bg-primary, etc */
+  --color-background: #2d2a37;
+  /* Gera: bg-background */
+
+  /* 2. Gradientes precisam da função linear-gradient() e prefixo --background-image-* */
+  --background-image-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --background-image-gradient-hover: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%);
+  /* 3. Sombras precisam do prefixo --shadow-* */
+  --shadow-custom: 0px 11px 7px 0px rgba(0, 0, 0, 0.01),
+    0px 7px 7px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.10),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.26),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.29),
+    0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset;
+
+  /* 4. Fontes usam --font-* */
+  --font-sans: 'Rubik', sans-serif;
+}
+
+body { 
+  font: 'Rubik', sans-serif;
+  background: linear-gradient(180deg, #8073c3 0%, #8e7ece 100%);
+  min-height: 100vh;
+}

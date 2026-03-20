@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Card } from "./Card";
 import { CalculatorHeading } from "./CalculatorHeading";
 import { Button } from "./Button";
 import { listButtons } from "../utils/buttons";
-
+import { CalculatorContext } from '../utils/CalculatorContext';
 export function Calculator(){
 
   const [operation, setOperation] = useState('')
   const [result, setResult] = useState('')
+
+  const { updateHistory } = React.useContext(CalculatorContext)
 
   function handleButtonClick(value: any){
     
@@ -32,6 +34,7 @@ export function Calculator(){
       console.log(operation)
       const operationResult = eval(operation.replace(/,/g, '.'))
       const parsedResult = operationResult.toString().replace(/\./g, ',')
+      updateHistory(operation, parsedResult)
       setResult(parsedResult)
      return
     }

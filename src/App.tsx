@@ -1,5 +1,6 @@
 import { Calculator } from './components/Calculator'
 import { HistoryCard } from './components/HistoryCalculator'
+import { CalculatorProvider } from './utils/CalculatorContext'
 
 
 export function App(){
@@ -8,8 +9,10 @@ export function App(){
      md:flex-row md:justify-center items-center md:items-stretch gap-2 md:px-40
      
      `}>
+      <CalculatorProvider >
       <Calculator />
       <HistoryCard />
+      </CalculatorProvider>
     </main>
   )
 }
